@@ -39,7 +39,7 @@
                 
                 <!-- Main Navigation -->
                 <nav class="hidden md:flex items-center space-x-8 space-x-reverse">
-                    <a href="#" class="text-blue-600 font-bold">خانه</a>
+                    <a href="/" class="text-blue-600 font-bold">خانه</a>
                     <a href="./products.html" class="text-gray-700 hover:text-blue-600">محصولات</a>
                     <a href="#" class="text-gray-700 hover:text-blue-600">درباره ما</a>
                     <a href="#" class="text-gray-700 hover:text-blue-600">تماس با ما</a>
@@ -420,6 +420,26 @@
         </div>
     </footer>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg p-6 flex flex-col">
+            <button id="closeMobileMenu" class="self-end mb-6 text-gray-600 text-2xl focus:outline-none">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="flex flex-col space-y-4">
+                <a href="/" class="text-blue-600 font-bold">خانه</a>
+                <a href="./products.html" class="text-gray-700 hover:text-blue-600">محصولات</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600">درباره ما</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600">تماس با ما</a>
+                <a href="./blog.html" class="text-gray-700 hover:text-blue-600">وبلاگ</a>
+                <a href="./login.html" class="flex items-center space-x-1 space-x-reverse px-3 py-2 rounded-lg hover:bg-gray-100">
+                    <i class="fas fa-user text-gray-600"></i>
+                    <span class="text-sm">ورود / ثبت‌نام</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
     <script>
         // Banner Slider
         let currentSlide = 0;
@@ -451,13 +471,23 @@
         
         // Initialize first slide
         showSlide(0);
-        
-        // Toggle search bar
-        const searchButton = document.querySelector('button[aria-label="Search"]');
-        const searchBar = document.getElementById('searchBar');
-        
-        searchButton.addEventListener('click', () => {
-            searchBar.classList.toggle('hidden');
+
+        // Mobile Menu Logic
+        const mobileMenu = document.getElementById('mobileMenu');
+        const openMenuBtn = document.querySelector('button.md\\:hidden');
+        const closeMenuBtn = document.getElementById('closeMobileMenu');
+
+        openMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+        // بستن منو با کلیک روی پس‌زمینه تار
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
         });
     </script>
 </body>
