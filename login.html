@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود / ثبت‌نام</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+        body { font-family: 'Noto Naskh Arabic', serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <!-- Back to Home Link -->
+    <div class="absolute top-4 left-4 z-50">
+        <a href="./index.html" class="flex items-center space-x-2 space-x-reverse bg-white border border-blue-500 text-blue-700 px-4 py-2 rounded-lg shadow hover:bg-blue-50 transition font-bold">
+            <span>بازگشت به خانه</span>
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+
+    <div class="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-center text-blue-700 mb-6">ورود / ثبت‌نام</h2>
+        <form class="space-y-4">
+            <div>
+                <label class="block text-gray-700 mb-1">ایمیل یا شماره موبایل</label>
+                <input type="text" class="w-full border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ایمیل یا شماره موبایل خود را وارد کنید">
+            </div>
+            <div>
+                <label class="block text-gray-700 mb-1">رمز عبور</label>
+                <input type="password" class="w-full border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="رمز عبور خود را وارد کنید">
+            </div>
+            <div class="flex items-center justify-between">
+                <label class="flex items-center text-sm">
+                    <input type="checkbox" class="ml-2">
+                    مرا به خاطر بسپار
+                </label>
+                <a href="#" class="text-blue-600 text-sm hover:underline">فراموشی رمز عبور؟</a>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg font-bold hover:bg-blue-700 transition">ورود</button>
+        </form>
+        <div class="my-6 flex items-center justify-center">
+            <span class="border-b border-gray-300 w-1/4"></span>
+            <span class="mx-2 text-gray-400">یا</span>
+            <span class="border-b border-gray-300 w-1/4"></span>
+        </div>
+        <div class="space-y-3">
+            <button class="w-full flex items-center justify-center border border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition">
+                <i class="fab fa-google text-red-500 text-lg ml-2"></i>
+                ورود با گوگل
+            </button>
+            <button class="w-full flex items-center justify-center border border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition">
+                <i class="fab fa-facebook text-blue-600 text-lg ml-2"></i>
+                ورود با فیسبوک
+            </button>
+            <button class="w-full flex items-center justify-center border border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition">
+                <i class="fab fa-apple text-gray-800 text-lg ml-2"></i>
+                ورود با اپل
+            </button>
+        </div>
+        <p class="mt-6 text-center text-gray-600 text-sm">حساب کاربری ندارید؟ <a href="#" class="text-blue-600 hover:underline">ثبت‌نام کنید</a></p>
+    </div>
+</body>
+</html>

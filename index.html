@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه تجهیزات پزشکی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        .banner-slide {
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .category-card:hover .category-overlay {
+            opacity: 1;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <i class="fas fa-hospital-alt text-4xl text-blue-600"></i>
+                </div>
+                
+                <!-- Main Navigation -->
+                <nav class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <a href="#" class="text-blue-600 font-bold">خانه</a>
+                    <a href="./products.html" class="text-gray-700 hover:text-blue-600">محصولات</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">درباره ما</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">تماس با ما</a>
+                    <a href="./blog.html" class="text-gray-700 hover:text-blue-600">وبلاگ</a>
+                </nav>
+                
+                <!-- Right Side Icons -->
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <!-- User Account -->
+                    <a href="./login.html" class="hidden md:flex items-center space-x-1 space-x-reverse px-3 py-2 rounded-lg hover:bg-gray-100">
+                        <i class="fas fa-user text-gray-600"></i>
+                        <span class="text-sm">ورود / ثبت‌نام</span>
+                    </a>
+
+                    <!-- Cart -->
+                    <a href="./cart.html" class="relative p-2 rounded-full hover:bg-gray-100">
+                        <i class="fas fa-shopping-cart text-gray-600"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2 rounded-full hover:bg-gray-100">
+                        <i class="fas fa-bars text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- Search Box -->
+        <div class="mb-6">
+            <div class="relative max-w-2xl mx-auto">
+                <input type="text" placeholder="جستجوی محصولات..." class="w-full border border-gray-300 rounded-full py-3 px-6 pr-12 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button class="absolute left-4 top-3 text-gray-500">
+                    <i class="fas fa-search text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Banner Slider -->
+        <section class="relative mb-10 rounded-xl overflow-hidden">
+            <div class="relative h-64 md:h-96">
+                <!-- Slide 1 -->
+                <div class="banner-slide absolute inset-0 flex items-center bg-gradient-to-r from-blue-500 to-blue-700">
+                    <div class="container mx-auto px-8 text-white">
+                        <h2 class="text-2xl md:text-4xl font-bold mb-4">تجهیزات پزشکی با کیفیت</h2>
+                        <p class="text-lg mb-6">بهترین برندهای جهانی با گارانتی اصالت کالا</p>
+                        <a href="./products.html" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition">مشاهده محصولات</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="banner-slide absolute inset-0 flex items-center bg-gradient-to-r from-green-500 to-green-700 opacity-0">
+                    <div class="container mx-auto px-8 text-white">
+                        <h2 class="text-2xl md:text-4xl font-bold mb-4">تخفیف‌های ویژه</h2>
+                        <p class="text-lg mb-6">تا 40% تخفیف روی محصولات منتخب</p>
+                        <a  href="./products.html" class="bg-white text-green-600 px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition">مشاهده تخفیف‌ها</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="banner-slide absolute inset-0 flex items-center bg-gradient-to-r from-purple-500 to-purple-700 opacity-0">
+                    <div class="container mx-auto px-8 text-white">
+                        <h2 class="text-2xl md:text-4xl font-bold mb-4">ارسال سریع و رایگان</h2>
+                        <p class="text-lg mb-6">برای خریدهای بالای 1 میلیون تومان</p>
+                        <a  href="./blog-post.html" class="bg-white text-purple-600 px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition">اطلاعات بیشتر</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slider Controls -->
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3">
+                <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100" data-slide="0"></button>
+                <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100" data-slide="1"></button>
+                <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100" data-slide="2"></button>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b-2 border-blue-500 pb-2 inline-block">دسته‌بندی محصولات</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- Category 1 -->
+                <a href="./products.html" class="text-center">
+                    <div class="category-card relative rounded-xl overflow-hidden shadow-md h-40 mb-2">
+                        <i class="fas fa-x-ray text-6xl text-gray-400 w-full h-full flex items-center justify-center bg-gray-100"></i>
+                        <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 transition-opacity">
+                            <h3 class="text-white text-xl font-bold">تجهیزات تصویربرداری</h3>
+                        </div>
+                    </div>
+                    <h3 class="text-gray-700 text-sm font-medium">تجهیزات تصویربرداری</h3>
+                </a>
+                
+                <!-- Category 2 -->
+                <a href="./products.html" class="text-center">
+                    <div class="category-card relative rounded-xl overflow-hidden shadow-md h-40 mb-2">
+                        <i class="fas fa-syringe text-6xl text-gray-400 w-full h-full flex items-center justify-center bg-gray-100"></i>
+                        <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 transition-opacity">
+                            <h3 class="text-white text-xl font-bold">تجهیزات جراحی</h3>
+                        </div>
+                    </div>
+                    <h3 class="text-gray-700 text-sm font-medium">تجهیزات جراحی</h3>
+                </a>
+
+                <!-- Category 3 -->
+                <a href="./products.html" class="text-center">
+                    <div class="category-card relative rounded-xl overflow-hidden shadow-md h-40 mb-2">
+                        <i class="fas fa-procedures text-6xl text-gray-400 w-full h-full flex items-center justify-center bg-gray-100"></i>
+                        <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 transition-opacity">
+                            <h3 class="text-white text-xl font-bold">تجهیزات بیمارستانی</h3>
+                        </div>
+                    </div>
+                    <h3 class="text-gray-700 text-sm font-medium">تجهیزات بیمارستانی</h3>
+                </a>
+                
+                <!-- Category 4 -->
+                <a href="./products.html" class="text-center">
+                    <div class="category-card relative rounded-xl overflow-hidden shadow-md h-40 mb-2">
+                        <i class="fas fa-flask text-6xl text-gray-400 w-full h-full flex items-center justify-center bg-gray-100"></i>
+                        <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 transition-opacity">
+                            <h3 class="text-white text-xl font-bold">تجهیزات آزمایشگاهی</h3>
+                        </div>
+                    </div>
+                    <h3 class="text-gray-700 text-sm font-medium">تجهیزات آزمایشگاهی</h3>
+                </a>
+
+                <!-- Category 5 -->
+                <a href="./products.html" class="text-center">
+                    <div class="category-card relative rounded-xl overflow-hidden shadow-md h-40 mb-2">
+                        <i class="fas fa-home text-6xl text-gray-400 w-full h-full flex items-center justify-center bg-gray-100"></i>
+                        <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 transition-opacity">
+                            <h3 class="text-white text-xl font-bold">تجهیزات پزشکی خانگی</h3>
+                        </div>
+                    </div>
+                    <h3 class="text-gray-700 text-sm font-medium">تجهیزات پزشکی خانگی</h3>
+                </a>
+            </div>
+        </section>
+
+        <!-- Brands Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b-2 border-blue-500 pb-2 inline-block">برندهای معتبر</h2>
+            
+            <div class="bg-white py-12">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+                    <!-- Brand 1 -->
+                    <div class="flex bg-gray-100 items-center justify-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition">
+                        <div class="text-2xl font-bold text-gray-700">برند A</div>
+                    </div>
+                    
+                    <!-- Brand 2 -->
+                    <div class="flex bg-gray-100 items-center justify-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition">
+                        <div class="text-2xl font-bold text-gray-700">برند B</div>
+                    </div>
+                    
+                    <!-- Brand 3 -->
+                    <div class="flex bg-gray-100 items-center justify-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition">
+                        <div class="text-2xl font-bold text-gray-700">برند C</div>
+                    </div>
+                    
+                    <!-- Brand 4 -->
+                    <div class="flex bg-gray-100 items-center justify-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition">
+                        <div class="text-2xl font-bold text-gray-700">برند D</div>
+                    </div>
+                    
+                    <!-- Brand 5 -->
+                    <div class="flex bg-gray-100 items-center justify-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition">
+                        <div class="text-2xl font-bold text-gray-700">برند E</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="mb-12">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2 inline-block">محصولات ویژه</h2>
+                <div class="flex space-x-3 space-x-reverse">
+                    <button class="px-4 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">پرفروش‌ترین‌ها</button>
+                    <button class="px-4 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">جدیدترین‌ها</button>
+                    <button class="px-4 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">تخفیف‌دارها</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <a href="product-detail.html" class="product-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 block hover:shadow-lg cursor-pointer">
+                    <div class="relative">
+                        <i class="fas fa-heartbeat text-6xl text-gray-400 w-full h-48 flex items-center justify-center bg-gray-100"></i>
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">15% تخفیف</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-gray-800 font-medium mb-2">دستگاه نوار قلب ECG مدل XYZ</h3>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-500 line-through text-sm">12,500,000 تومان</span>
+                                <span class="text-blue-600 font-bold block">10,500,000 تومان</span>
+                            </div>
+                            <button class="bg-blue-100 text-blue-600 p-2 rounded-full hover:bg-blue-200">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <!-- Product 2 -->
+                <a href="product-detail.html" class="product-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 block hover:shadow-lg cursor-pointer">
+                    <div class="relative">
+                          <i class="fas fa-heart-crack text-6xl text-gray-400 w-full h-48 flex items-center justify-center bg-gray-100"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-gray-800 font-medium mb-2">دستگاه سونوگرافی پرتابل مدل ABC</h3>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-blue-600 font-bold block">85,000,000 تومان</span>
+                            </div>
+                            <button class="bg-blue-100 text-blue-600 p-2 rounded-full hover:bg-blue-200">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <!-- Product 3 -->
+                <a href="product-detail.html" class="product-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 block hover:shadow-lg cursor-pointer">
+                    <div class="relative">
+                        <i class="fas fa-heart-crack text-6xl text-gray-400 w-full h-48 flex items-center justify-center bg-gray-100"></i>
+                        <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">جدید</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-gray-800 font-medium mb-2">دستگاه شوک قلبی AED مدل DEF</h3>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-blue-600 font-bold block">45,000,000 تومان</span>
+                            </div>
+                            <button class="bg-blue-100 text-blue-600 p-2 rounded-full hover:bg-blue-200">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <!-- Product 4 -->
+                <a href="product-detail.html" class="product-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 block hover:shadow-lg cursor-pointer">
+                    <div class="relative">
+                <i class="fas fa-heart-crack text-6xl text-gray-400 w-full h-48 flex items-center justify-center bg-gray-100"></i>
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">20% تخفیف</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-gray-800 font-medium mb-2">مانیتور علائم حیاتی مدل GHI</h3>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-500 line-through text-sm">32,000,000 تومان</span>
+                                <span class="text-blue-600 font-bold block">25,600,000 تومان</span>
+                            </div>
+                            <button class="bg-blue-100 text-blue-600 p-2 rounded-full hover:bg-blue-200">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Blog Call to Action -->
+        <section class="mb-12">
+            <div class="bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl shadow-md p-8 flex flex-col md:flex-row items-center justify-between text-white">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-2">جدیدترین مقالات پزشکی را در وبلاگ ما بخوانید</h2>
+                    <p class="text-lg">مطالب تخصصی، اخبار روز و نکات کاربردی برای سلامت شما و خانواده‌تان</p>
+                </div>
+                <a href="./blog.html" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-bold shadow hover:bg-gray-100 transition text-lg">مشاهده وبلاگ</a>
+            </div>
+        </section>
+
+        <!-- Trust Signals -->
+        <section class="mb-12 bg-white rounded-xl shadow-md p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Trust 1 -->
+                <div class="flex items-start space-x-3 space-x-reverse">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">ضمانت اصالت کالا</h3>
+                        <p class="text-gray-600 text-sm">تمامی محصولات با گارانتی اصالت کالا و خدمات پس از فروش عرضه می‌شوند.</p>
+                    </div>
+                </div>
+                
+                <!-- Trust 2 -->
+                <div class="flex items-start space-x-3 space-x-reverse">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                        <i class="fas fa-headset text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">مشاوره تخصصی</h3>
+                        <p class="text-gray-600 text-sm">کارشناسان ما آماده ارائه مشاوره تخصصی برای انتخاب بهترین محصول هستند.</p>
+                    </div>
+                </div>
+                
+                <!-- Trust 3 -->
+                <div class="flex items-start space-x-3 space-x-reverse">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                        <i class="fas fa-truck text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">ارسال سریع و مطمئن</h3>
+                        <p class="text-gray-600 text-sm">ارسال سفارشات در کمترین زمان ممکن به سراسر کشور انجام می‌شود.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Footer Column 1 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-b-2 border-blue-500 pb-2 inline-block">درباره ما</h3>
+                    <p class="text-gray-400 text-sm mb-4">فروشگاه اینترنتی تجهیزات پزشکی با سابقه درخشان در عرضه محصولات با کیفیت پزشکی و بیمارستانی</p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-telegram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-whatsapp text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Footer Column 2 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-b-2 border-blue-500 pb-2 inline-block">لینک‌های مفید</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">خانه</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">محصولات</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">وبلاگ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">درباره ما</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">تماس با ما</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Footer Column 3 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-b-2 border-blue-500 pb-2 inline-block">خدمات مشتریان</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">پرسش‌های متداول</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">شرایط بازگشت کالا</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">حریم خصوصی</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">قوانین و مقررات</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Footer Column 4 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-b-2 border-blue-500 pb-2 inline-block">تماس با ما</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-start space-x-2 space-x-reverse">
+                            <i class="fas fa-map-marker-alt mt-1"></i>
+                            <span>تهران، خیابان آزادی، پلاک 123</span>
+                        </li>
+                        <li class="flex items-center space-x-2 space-x-reverse">
+                            <i class="fas fa-phone"></i>
+                            <span>021-12345678</span>
+                        </li>
+                        <li class="flex items-center space-x-2 space-x-reverse">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@medicalshop.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+                <p>© 2023 تمامی حقوق برای فروشگاه تجهیزات پزشکی محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Banner Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.style.opacity = '0');
+            dots.forEach(dot => dot.classList.remove('opacity-100'));
+            
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].style.opacity = '1';
+            dots[currentSlide].classList.add('opacity-100');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Auto slide change every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Click on dots to change slide
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                showSlide(parseInt(dot.dataset.slide));
+            });
+        });
+        
+        // Initialize first slide
+        showSlide(0);
+        
+        // Toggle search bar
+        const searchButton = document.querySelector('button[aria-label="Search"]');
+        const searchBar = document.getElementById('searchBar');
+        
+        searchButton.addEventListener('click', () => {
+            searchBar.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

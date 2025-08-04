@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وبلاگ | فروشگاه تجهیزات پزشکی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+        body { font-family: 'Noto Naskh Arabic', serif; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header (مشابه سایر صفحات) -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <i class="fas fa-hospital-alt text-3xl text-blue-600"></i>
+                <span class="mr-2 font-bold text-lg text-blue-700">فروشگاه تجهیزات پزشکی</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 space-x-reverse">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">خانه</a>
+                <a href="products.html" class="text-gray-700 hover:text-blue-600">محصولات</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600">درباره ما</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600">تماس با ما</a>
+                <a href="#" class="text-blue-600 font-bold">وبلاگ</a>
+            </nav>
+            <a href="./cart.html" class="relative p-2 rounded-full hover:bg-gray-100">
+                <i class="fas fa-shopping-cart text-gray-600"></i>
+                <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Blog Title & Search -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">وبلاگ تخصصی تجهیزات پزشکی</h1>
+            <div class="relative max-w-xs w-full">
+                <input type="text" placeholder="جستجوی مقالات..." class="w-full border border-gray-300 rounded-full py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button class="absolute left-3 top-2 text-gray-500">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Blog Posts Grid (Wireframe) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Blog Card 1 -->
+            <a href="blog-post.html" class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition cursor-pointer">
+                <div class="h-48 bg-gray-200 flex items-center justify-center">
+                    <span class="text-gray-400 text-6xl"><i class="fas fa-image"></i></span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <h2 class="text-gray-800 font-bold text-lg mb-2 line-clamp-2">عنوان مقاله نمونه</h2>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">خلاصه‌ای از مقاله یا مقدمه‌ای کوتاه درباره موضوع مقاله در اینجا قرار می‌گیرد...</p>
+                    <div class="flex items-center justify-between text-xs text-gray-400">
+                        <span><i class="fas fa-calendar-alt ml-1"></i>1404/05/10</span>
+                        <span><i class="fas fa-user ml-1"></i>نویسنده نمونه</span>
+                    </div>
+                </div>
+            </a>
+            <!-- Blog Card 2 -->
+            <a href="blog-post.html" class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition cursor-pointer">
+                <div class="h-48 bg-gray-200 flex items-center justify-center">
+                    <span class="text-gray-400 text-6xl"><i class="fas fa-image"></i></span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <h2 class="text-gray-800 font-bold text-lg mb-2 line-clamp-2">عنوان مقاله دیگر</h2>
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">خلاصه‌ای از مقاله یا مقدمه‌ای کوتاه درباره موضوع مقاله در اینجا قرار می‌گیرد...</p>
+                    <div class="flex items-center justify-between text-xs text-gray-400">
+                        <span><i class="fas fa-calendar-alt ml-1"></i>1404/05/09</span>
+                        <span><i class="fas fa-user ml-1"></i>نویسنده دیگر</span>
+                    </div>
+                </div>
+            </a>
+            <!-- Blog Card 3 (Wireframe) -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col opacity-60">
+                <div class="h-48 bg-gray-200 flex items-center justify-center">
+                    <span class="text-gray-300 text-6xl"><i class="fas fa-image"></i></span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <h2 class="text-gray-400 font-bold text-lg mb-2 line-clamp-2">...</h2>
+                    <p class="text-gray-300 text-sm mb-4 line-clamp-3">...</p>
+                    <div class="flex items-center justify-between text-xs text-gray-300">
+                        <span>...</span>
+                        <span>...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col opacity-60">
+                <div class="h-48 bg-gray-200 flex items-center justify-center">
+                    <span class="text-gray-300 text-6xl"><i class="fas fa-image"></i></span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <h2 class="text-gray-400 font-bold text-lg mb-2 line-clamp-2">...</h2>
+                    <p class="text-gray-300 text-sm mb-4 line-clamp-3">...</p>
+                    <div class="flex items-center justify-between text-xs text-gray-300">
+                        <span>...</span>
+                        <span>...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col opacity-60">
+                <div class="h-48 bg-gray-200 flex items-center justify-center">
+                    <span class="text-gray-300 text-6xl"><i class="fas fa-image"></i></span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <h2 class="text-gray-400 font-bold text-lg mb-2 line-clamp-2">...</h2>
+                    <p class="text-gray-300 text-sm mb-4 line-clamp-3">...</p>
+                    <div class="flex items-center justify-between text-xs text-gray-300">
+                        <span>...</span>
+                        <span>...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pagination (Wireframe) -->
+        <div class="flex justify-center mt-10">
+            <nav class="inline-flex rounded-md shadow-sm">
+                <a href="#" class="px-3 py-1 border border-gray-300 bg-white text-gray-500 rounded-r-md">قبلی</a>
+                <a href="#" class="px-3 py-1 border-t border-b border-gray-300 bg-blue-600 text-white font-bold">1</a>
+                <a href="#" class="px-3 py-1 border-t border-b border-gray-300 bg-white text-gray-700">2</a>
+                <a href="#" class="px-3 py-1 border-t border-b border-gray-300 bg-white text-gray-700">3</a>
+                <span class="px-3 py-1 border-t border-b border-gray-300 bg-white text-gray-400">...</span>
+                <a href="#" class="px-3 py-1 border border-gray-300 bg-white text-gray-700 rounded-l-md">بعدی</a>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer (مشابه سایر صفحات) -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+            <p>© 2025 تمامی حقوق برای فروشگاه تجهیزات پزشکی محفوظ است.</p>
+        </div>
+    </footer>
+</body>
+</html>
